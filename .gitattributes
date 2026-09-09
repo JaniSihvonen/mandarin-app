@@ -1,0 +1,10 @@
+# Store all text files with LF in the repository.
+# Windows checkouts still get CRLF locally; the build on Linux (Netlify)
+# and any future collaborator see consistent line endings.
+* text=auto eol=lf
+
+# Binary files - never convert
+*.png binary
+*.jpg binary
+*.mp3 binary
+*.woff2 binary
