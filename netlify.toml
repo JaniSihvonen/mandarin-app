@@ -1,0 +1,15 @@
+[build]
+  # Runs tsc -b && vite build. A type error fails the deploy instead of
+  # shipping broken code, which is the point of having TypeScript here.
+  command = "npm run build"
+  publish = "dist"
+
+# Single-page app fallback: serve index.html for any path that is not a
+# real file. Without this, opening a deep link or refreshing the browser
+# on any route other than "/" returns a 404 in production while working
+# fine in development. Static assets still win, because Netlify matches
+# real files before redirects.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
