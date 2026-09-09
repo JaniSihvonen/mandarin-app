@@ -1,0 +1,50 @@
+.panel {
+  width: min(100%, 34rem);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.headline {
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.stat dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.stat dd {
+  margin: 0;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.note {
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.scaffold {
+  margin: 0;
+  font-size: 0.8rem;
+  font-style: italic;
+  opacity: 0.75;
+}

@@ -1,6 +1,15 @@
 .main {
   min-height: 100dvh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*
+   * `safe` keeps centring from pushing content past the top edge when it no
+   * longer fits, which would make it unreachable by scrolling. The plain
+   * value is the fallback for engines that do not know the keyword.
+   */
+  justify-content: center;
+  justify-content: safe center;
+  gap: clamp(1rem, 3vw, 1.5rem);
   padding: clamp(1rem, 4vw, 2.5rem);
 }
