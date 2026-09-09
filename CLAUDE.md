@@ -44,9 +44,14 @@ Hylkäys → yksi uusi yritys → sitten kortti ilman lausetta, merkitään uude
 ## Kieli
 
 - **Koodi ja commitit englanniksi.** Muuttujat, funktiot, kommentit, tiedostonimet
-- **Tietokantataulut ja -kentät `snake_case`-englantia** (`user_words`, `tone_pattern_surface`)
+- **Käyttöliittymä suomeksi.** Sovellus on yhdelle suomenkieliselle käyttäjälle, ja rituaaliteksti on käyttäytymisen ohjausta joka puree omalla kielellä paremmin. i18n-kerrosta ei tule
+- **Tietokantataulut ja -kentät `snake_case`-englantia** (`user_words`, `tone_pattern_surface`). Myös niitä vastaavat TypeScript-tyypit, ks. ADR 0009
 - **Suunnitteludokumentit ja ADR:t suomeksi.** `README.md` on englanniksi, koska se on repon julkinen kasvo
 - Sama asia kahdella nimellä on siedettävä hinta siitä että kumpikin konteksti pysyy luettavana
+
+**Kielimallilta pyydetään aina englantia, riippumatta käyttöliittymän kielestä.** Koskee lauseiden käännöksiä (askel 9) ja muistisääntöjä (askel 13). Syy: kiina→suomi on mallille selvästi heikompi suunta kuin kiina→englanti, eikä käännöksiä ja muistisääntöjä validoida sanakirjaa vasten — virhe menisi läpi huomaamatta. Tämä on ainoa aito riski suomenkielisessä käyttöliittymässä, ja tämä sääntö poistaa sen.
+
+Seuraus: kortin merkitykset ovat englanniksi, koska ne tulevat CC-CEDICTistä. Avointa kiina–suomi-sanakirjaa ei ole. Kuvan tehtävä (F7) on juuri katkaista riippuvuus englannin käännöksestä.
 
 ## Commit-käytäntö
 
