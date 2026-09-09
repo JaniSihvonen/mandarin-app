@@ -2,6 +2,8 @@
 
 A spaced-repetition app for learning Mandarin Chinese, built for a single learner.
 
+**Live:** <https://mandarin-appjs.netlify.app> — deployed automatically from `main`.
+
 **Status:** early development. The application is not usable yet — see [Roadmap](#roadmap).
 
 ## What it is
