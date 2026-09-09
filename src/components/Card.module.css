@@ -1,0 +1,91 @@
+.card {
+  width: min(100%, 34rem);
+  min-height: min(70dvh, 30rem);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 5vw, 2.5rem);
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+/*
+ * Sized against viewport height as well as width. Width alone overflows a
+ * short window — a laptop with a browser toolbar, or a split screen — and the
+ * card is supposed to fit on screen without scrolling.
+ */
+.hanzi {
+  margin: 0;
+  font-family: var(--font-hanzi);
+  font-size: clamp(4rem, min(26vw, 24vh), 11rem);
+  font-weight: 400;
+  line-height: 1;
+  transition: font-size 160ms ease;
+}
+
+/*
+ * On the back the characters stay fully legible but shrink, so that the
+ * pinyin and the meaning are visually dominant. That ordering is a rule from
+ * the specification, not a style preference: the back must read as an answer,
+ * not as a page.
+ */
+.hanzi[data-revealed='true'] {
+  font-size: clamp(2.5rem, min(14vw, 13vh), 5.5rem);
+}
+
+.prompt,
+.answer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.ritual {
+  margin: 0;
+  max-width: 22ch;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.reveal {
+  min-height: var(--tap-target);
+  padding: 0 1.75rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 120ms ease;
+}
+
+/* Hover is a hint only. Every action here also works by tap and by keyboard. */
+.reveal:hover {
+  opacity: 0.9;
+}
+
+.reveal:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.pinyin {
+  margin: 0;
+  color: var(--accent);
+  font-size: clamp(1.75rem, 7vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.meaning {
+  margin: 0;
+  max-width: 20ch;
+  font-size: clamp(1.5rem, 6vw, 2.25rem);
+  line-height: 1.2;
+}
